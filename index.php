@@ -9,11 +9,38 @@
 	<?php $page_title ="Attend"; ?>
 	<?php $fb_page_id = "339755068127"; ?>
 
-	<div class="page-header">
+	<?php $year_range = 2;
 
-		<h1><?php echo $page_title; ?></h1>
+// automatically adjust date range
+// human readable years
+	$since_date = date('2016-01-01', strtotime('-' . $year_range . ' years'));
+	$until_date = date('2021-01-01', strtotime('+' . $year_range . ' years'));
 
-	</div>
+// unix timestamp years
+	$since_unix_timestamp = strtotime($since_date);
+	$until_unix_timestamp = strtotime($until_date);
+
+// or you can set a fix date range:
+// $since_unix_timestamp = strtotime("2016-01-08");
+// $until_unix_timestamp = strtotime("2020-06-28"); 
+
+	$access_token = "1994230297502387";
+
+	$fields="id,name,description,place,timezone,start_time,cover";
+
+	$json_link = "https://graph.facebook.com/v2.7/{$fb_page_id}/events/attending/?fields={$fields}&access_token={$access_token}&since={$since_unix_timestamp}&until={$until_unix_timestamp}";
+
+	$json = file_get_contents($json_link);
+
+	$obj = json_decode($json, true, 512, JSON_BIGINT_AS_STRING);?>
+
+<div class="page-header">
+
+	<h1><?php echo $page_title; ?></h1>
+
+</div>
+
+
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
