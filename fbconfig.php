@@ -16,7 +16,7 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '1994230297502387','f7c1af57558d337368ea4ea5eae169cb' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://localhost/FBEvents/index.php' );
+    $helper = new FacebookRedirectLoginHelper('http://www.juliageirnaerdt.nl/FBEvents/index.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
