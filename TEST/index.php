@@ -34,15 +34,15 @@
 
 	$obj = json_decode($json, true, 512, JSON_BIGINT_AS_STRING);?>
 	
-<div class="page-header">
+	<div class="page-header">
 
-	<h1><?php echo $page_title; ?></h1>
+		<h1><?php echo $page_title; ?></h1>
 
-</div>
+	</div>
 
 
 
-<table class="table table-hover table-responsive table-bordered">
+	<table class="table table-hover table-responsive table-bordered">
 
 <?php	// count the number of events
 $event_count = count($obj['data']);
@@ -70,38 +70,38 @@ for($x=0; $x<$event_count; $x++){
 
 	$location="";
 
-echo "<tr>";
-    echo "<td rowspan='6' style='width:20em;'>";
-        echo "<img src='{$pic_big}' width='200px' />";
-    echo "</td>";
-echo "</tr>";
-  
-echo "<tr>";
-    echo "<td style='width:15em;'>What:</td>";
-    echo "<td><b>{$name}</b></td>";
-echo "</tr>";
-  
-echo "<tr>";
-    echo "<td>When:</td>";
-    echo "<td>{$start_date} at {$start_time}</td>";
-echo "</tr>";
-  
-echo "<tr>";
-    echo "<td>Where:</td>";
-    echo "<td>{$location}</td>";
-echo "</tr>";
-  
-echo "<tr>";
-    echo "<td>Description:</td>";
-    echo "<td>{$description}</td>";
-echo "</tr>";
-  
-echo "<tr>";
-    echo "<td>Facebook Link:</td>";
-    echo "<td>";
-        echo "<a href='https://www.facebook.com/events/{$eid}/' target='_blank'>View on Facebook</a>";
-    echo "</td>";
-echo "</tr>";
+	echo "<tr>";
+	echo "<td rowspan='6' style='width:20em;'>";
+	echo "<img src='{$pic_big}' width='200px' />";
+	echo "</td>";
+	echo "</tr>";
+	
+	echo "<tr>";
+	echo "<td style='width:15em;'>What:</td>";
+	echo "<td><b>{$name}</b></td>";
+	echo "</tr>";
+	
+	echo "<tr>";
+	echo "<td>When:</td>";
+	echo "<td>{$start_date} at {$start_time}</td>";
+	echo "</tr>";
+	
+	echo "<tr>";
+	echo "<td>Where:</td>";
+	echo "<td>{$location}</td>";
+	echo "</tr>";
+	
+	echo "<tr>";
+	echo "<td>Description:</td>";
+	echo "<td>{$description}</td>";
+	echo "</tr>";
+	
+	echo "<tr>";
+	echo "<td>Facebook Link:</td>";
+	echo "<td>";
+	echo "<a href='https://www.facebook.com/events/{$eid}/' target='_blank'>View on Facebook</a>";
+	echo "</td>";
+	echo "</tr>";
 
 
 	if($place_name && $city && $country && $zip){
@@ -115,7 +115,7 @@ echo "</tr>";
 
 
 
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 </head>
 <body>
